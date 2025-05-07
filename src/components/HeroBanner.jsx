@@ -1,44 +1,71 @@
 import React from 'react';
 import { Box, Typography, Button } from '@mui/material';
-import HeroBannerImage from '../assets/images/banner.png';
+import navbarback from '../assets/images/navbarback.png';
+import worker from '../assets/images/worker.png';
+import Logo from '../assets/images/Logo.png'
 
 const HeroBanner = () => {
   return (
     <Box
       sx={{
-        mt: { lg: '50px', xs: '70px' },
-        ml: { sm: '50px' },
+        width:'100%',
         position: 'relative',
-        p: '20px',
-        backgroundImage: `url(${HeroBannerImage})`, 
+        display: 'flex',
+        flexDirection:'row',
+        p: ' 20px',
+        backgroundImage: `url(${navbarback})`, 
         backgroundSize: 'cover',
         backgroundPosition: 'center',
       }}
     >
-      <Typography color="#3268a8" fontSize="26px" fontWeight="600">
-        Vila Flor Fitness
-      </Typography>
-      <Typography fontWeight={700} sx={{ fontSize: { lg: '44px', xs: '40px' } }} mb="20px" mt="30px">
-        Suar, Sorrir <br /> e Repetir
-      </Typography>
-      <Typography fontSize="22px" lineHeight="35px" mb={4}>
-        Descobre os melhores exercícios para ti...
-      </Typography>
-      <Button variant="contained" color="secondary" href="#exercises" sx={{ backgroundColor: '#3268a8', padding: '10px' }}>
-        Explorar Exercícios
-      </Button>
-      <Typography
-        fontWeight={600}
-        color="primary"
+      <Box
         sx={{
-          opacity: 0.2,
-          display: { lg: 'block', xs: 'none' },
+          display: 'flex',
+          flexDirection: 'column',
+          width: '50%',
         }}
-        fontSize="180px"
       >
-        Vila Flor
-      </Typography>
-      
+        <img src={Logo} alt="logotipo"  style={{
+                           
+                            width: '60%',
+                            height: '40%',
+                            margin: '20px',
+                            display: 'flex',
+                            justifyContent: 'center',
+                            alignItems: 'center',
+                            }}/>                 
+        <Typography fontWeight={700} color='#fff' sx={{ fontSize: { lg: '44px', xs: '40px' } }} mb="20px" mt="30px">
+          Suar, Sorrir <br /> e Repetir
+        </Typography>
+        <Typography fontSize="22px" color='#fff' lineHeight="35px" mb={4}>
+          Descobre os melhores exercícios para ti...
+        </Typography>
+        <Button variant="contained" color="secondary" href="#exercises" sx={{ 
+          backgroundColor: 'red', 
+          padding: '10px',
+          width: '70%',
+        
+          }}>
+          Explorar Exercícios
+        </Button>
+        
+        
+      </Box>
+      <Box
+        sx={{ 
+          display: 'flex',
+          with: '50%',
+        }}
+      >
+         <img src={worker} alt="logotipo"  style={{
+                            width: '100%',
+                            height: '100%',
+                            margin: '20px',
+                            display: 'flex',
+                            justifyContent: 'flex-end',
+                            alignItems: 'flex-end',
+                            }}/>
+      </Box>
     </Box>
   );
 };
